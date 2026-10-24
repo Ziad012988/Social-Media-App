@@ -8,7 +8,7 @@ export default function Layout() {
     <>
       <Navbar />
 
-      <div className="container">
+      <div className="w-full">
         <Outlet />
       </div>
 

@@ -242,14 +242,7 @@ export default function Navbar() {
 
             {/* الأزرار */}
             <div className="grid gap-2 sm:grid-cols-2">
-              <Link
-                to="/create-post"
-                onClick={() => setOpen(false)}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#2f5bff] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#2f5bff]/30 transition hover:bg-[#2447d9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5bff] dark:bg-[#3f6bff] dark:hover:bg-[#5a80ff]"
-              >
-                <FiPlus className="h-[18px] w-[18px]" />
-                Create post
-              </Link>
+      
               <button
                 type="button"
                 onClick={handleLogout}

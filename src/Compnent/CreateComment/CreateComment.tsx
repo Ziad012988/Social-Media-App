@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { FiImage, FiSend, FiSmile, FiUser } from "react-icons/fi";
+import { FiImage, FiSend, FiUser } from "react-icons/fi";
 import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "./../../../node_modules/react-hot-toast/src/index";
@@ -103,14 +103,6 @@ export default function CreateComment({ postId }: { postId: string }) {
         {/* الأيقونات + زرار الإرسال */}
         <div className="flex items-center justify-between px-1.5 pb-1">
           <div className="flex items-center gap-1 text-[#4b5680] dark:text-[#a9b2d8]">
-            {/* زرار الإيموجي (button مش input عشان يقدر يحتوي على أيقونة) */}
-            <button
-              type="button"
-              aria-label="Add emoji"
-              className="flex size-9 items-center justify-center rounded-full transition hover:bg-[#0e1433]/5 hover:text-[#2447d9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2f5bff] dark:hover:bg-white/10 dark:hover:text-[#9db6ff]"
-            >
-              <FiSmile className="size-4.5" />
-            </button>
 
             {/* اختيار صورة: label بيلف الـ input */}
             <label className="flex size-9 cursor-pointer items-center justify-center rounded-full transition hover:bg-[#0e1433]/5 hover:text-[#2447d9] focus-within:ring-2 focus-within:ring-[#2f5bff] dark:hover:bg-white/10 dark:hover:text-[#9db6ff]">

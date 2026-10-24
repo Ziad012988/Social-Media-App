@@ -1,4 +1,4 @@
-import { FiImage, FiSend, FiSmile, FiUser } from "react-icons/fi";
+import { FiImage, FiSend,  FiUser } from "react-icons/fi";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

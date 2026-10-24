@@ -17,7 +17,6 @@ import {
 import { AuthContext } from "../../Context/Context";
 import Loader from "../../Compnent/Loading/Loader";
 import { Link } from "react-router-dom";
-import PostDetails from "./../PostDetails/PostDetails";
 
 const BASE = "https://route-posts.routemisr.com";
 const headers = () => ({

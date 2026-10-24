@@ -1,5 +1,4 @@
 import { FiImage, FiSend, FiSmile, FiUser } from "react-icons/fi";
-import hero from "../../assets/Screenshot 2026-07-20 031253.png";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useState } from "react";
 import { useForm } from "react-hook-form";

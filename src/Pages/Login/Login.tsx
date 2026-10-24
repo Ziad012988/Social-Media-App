@@ -5,7 +5,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { FiArrowRight, FiLock, FiMail } from "react-icons/fi";
-import { IoChatbubbleEllipses } from "react-icons/io5";
 import { AuthContext } from "../../Context/Context";
 import toast from "react-hot-toast";
 

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FiHeart, FiMessageCircle, FiShare2 } from "react-icons/fi";
 import type { commentType, post } from "./../../Compnent/Types/Posts";
 import Comment from "./../../Compnent/Comment/Comment";

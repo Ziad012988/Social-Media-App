@@ -1,5 +1,3 @@
-// flowbit هجيب منه الفورم
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -15,8 +13,7 @@ const inputCls =
   "block w-full rounded-xl border border-[#0e1433]/15 bg-white px-4 py-3 text-base text-[#0e1433] placeholder:text-[#4b5680]/70 transition focus:border-[#2f5bff] focus:outline-none focus:ring-4 focus:ring-[#2f5bff]/20 dark:border-white/15 dark:bg-white/5 dark:text-[#eef1ff] dark:placeholder:text-[#a9b2d8]/60 dark:focus:border-[#3f6bff] dark:focus:ring-[#3f6bff]/30 dark:[color-scheme:dark]";
 const labelCls =
   "mb-1.5 block text-sm font-medium text-[#4b5680] dark:text-[#a9b2d8]";
-const errCls =
-  "mt-1.5 text-sm font-medium text-[#c43a1c] dark:text-[#ff8466]";
+const errCls = "mt-1.5 text-sm font-medium text-[#c43a1c] dark:text-[#ff8466]";
 const pillCls =
   "flex cursor-pointer select-none items-center justify-center rounded-xl border border-[#0e1433]/15 bg-white px-4 py-3 text-sm font-semibold text-[#0e1433] transition peer-checked:border-[#2f5bff] peer-checked:bg-[#2f5bff] peer-checked:text-white peer-focus-visible:ring-4 peer-focus-visible:ring-[#2f5bff]/30 dark:border-white/15 dark:bg-white/5 dark:text-[#eef1ff] dark:peer-checked:border-[#3f6bff] dark:peer-checked:bg-[#3f6bff]";
 
@@ -59,9 +56,6 @@ export default function register() {
   let [apiError, setApiError] = useState("");
   let [isLoading, setIsLoading] = useState(false);
 
-
-
-
   const form = useForm<RegisterSchemaType>({
     defaultValues: {
       name: "",
@@ -75,7 +69,7 @@ export default function register() {
     resolver: zodResolver(RegisterSchema),
   });
 
-  let { register, handleSubmit, formState, getValues, setError } = form;
+  let { register, handleSubmit, formState} = form;
 
   // const {ref , onChange ,name ,onBlur} = register("name");
 
@@ -87,7 +81,7 @@ export default function register() {
     // } else {
     //   setError("rePassword", { message: "password & repassword no match !" });
     // }
-       axios
+    axios
       .post("https://route-posts.routemisr.com/users/signup", values)
       .then((res) => {
         console.log(res.data);
@@ -98,13 +92,12 @@ export default function register() {
       .catch((err) => {
         console.log(err.response?.data);
         setApiError(
-          err.response?.data?.message || "Something went wrong, try again"
+          err.response?.data?.message || "Something went wrong, try again",
         );
       })
       .finally(() => {
         setIsLoading(false);
       });
-
   }
 
   return (
@@ -170,12 +163,10 @@ export default function register() {
                   className={inputCls}
                   placeholder="Ahmed Nabil"
                 />
-                {formState.errors.name?.message && formState.touchedFields.name && (
-                  <p className={errCls}>
-                    {" "}
-                    {formState.errors.name.message}{" "}
-                  </p>
-                )}
+                {formState.errors.name?.message &&
+                  formState.touchedFields.name && (
+                    <p className={errCls}> {formState.errors.name.message} </p>
+                  )}
               </div>
 
               {/* Email */}
@@ -196,12 +187,10 @@ export default function register() {
                   className={inputCls}
                   placeholder="you@example.com"
                 />
-                {formState.errors.email?.message && formState.touchedFields.email && (
-                  <p className={errCls}>
-                    {" "}
-                    {formState.errors.email.message}{" "}
-                  </p>
-                )}
+                {formState.errors.email?.message &&
+                  formState.touchedFields.email && (
+                    <p className={errCls}> {formState.errors.email.message} </p>
+                  )}
               </div>
 
               {/* Date of birth */}
@@ -253,7 +242,10 @@ export default function register() {
                   <div className="relative flex-1">
                     <input
                       {...register("gender", {
-                        required: { value: true, message: "Gender is required" },
+                        required: {
+                          value: true,
+                          message: "Gender is required",
+                        },
                       })}
                       id="default-radio-2"
                       type="radio"
